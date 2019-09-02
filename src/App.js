@@ -21,7 +21,12 @@ class App extends React.Component {
           completed: false
         }
       ]
+      
     };
+  }
+  InputChange = event =>
+  {
+    console.log(event.target.value);
   }
 MoreToDo = () => console.log('click!');
 BeGone = () => console.log('clickedy click!')
@@ -37,7 +42,7 @@ LineThrough = () => console.log('line through')
            <div onDoubleClick= {this.LineThrough}><TodoList task ={element.task} /></div>
          )
        })}
-        <input type="text" placeholder="..lets get it done!" onChange />
+        <input type="text" placeholder="..lets get it done!" onChange={this.InputChange} />
         <button onClick ={this.MoreToDo}>More To Do</button>
         <button onClick ={this.BeGone}>Be Gone!</button>
     
