@@ -3,6 +3,6 @@
 import React from 'react' ;
 
 const TodoList = props => 
-<h3>{props.task}</h3>;
+<h3>{props.task} </h3>;
 
 export default TodoList; 

@@ -23,13 +23,24 @@ class App extends React.Component {
       ]
     };
   }
-  
+  OneData(array) { 
+    return (
+    
+    array.map((element => {
+    return element.task;
+}))
+)
+  }
   render() {
+    const OneData = this.state.data.map((element)=> {
+      return element.task;
+    })
     return (
       <div>
          <h1> Hello {this.state.name}</h1>
         <h2>Welcome to your Todo App!</h2>
-        <TodoList task={this.state.data[1].task} />
+        <TodoList task={OneData[0]} />
+        
       </div>
     );
   }
