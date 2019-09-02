@@ -1,6 +1,6 @@
 import React from 'react';
 import TodoList from './components/TodoComponents/TodoList';
-
+import TodoCard from "./components/TodoComponents/TodoCard";
 class App extends React.Component {
   // you will need a place to store your state in this component.
   // design `App` to be the parent component of your application.
@@ -23,24 +23,19 @@ class App extends React.Component {
       ]
     };
   }
-  OneData(array) { 
-    return (
-    
-    array.map((element => {
-    return element.task;
-}))
-)
-  }
+
   render() {
-    const OneData = this.state.data.map((element)=> {
-      return element.task;
-    })
+    
     return (
       <div>
          <h1> Hello {this.state.name}</h1>
         <h2>Welcome to your Todo App!</h2>
-        <TodoList task={OneData[0]} />
-        
+       {this.state.data.map(element => {
+         return (
+           <TodoList task ={element.task} />
+         )
+       })}
+
       </div>
     );
   }
