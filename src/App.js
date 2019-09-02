@@ -23,19 +23,24 @@ class App extends React.Component {
       ]
     };
   }
-
+MoreToDo = () => console.log('click!');
+BeGone = () => console.log('clickedy click!')
+LineThrough = () => console.log('line through')
   render() {
-    
+  
     return (
       <div>
          <h1> Hello {this.state.name}</h1>
         <h2>Welcome to your Todo App!</h2>
        {this.state.data.map(element => {
          return (
-           <TodoList task ={element.task} />
+           <div onDoubleClick= {this.LineThrough}><TodoList task ={element.task} /></div>
          )
        })}
-
+        <input type="text" placeholder="..lets get it done!" onChange />
+        <button onClick ={this.MoreToDo}>More To Do</button>
+        <button onClick ={this.BeGone}>Be Gone!</button>
+    
       </div>
     );
   }
