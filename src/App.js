@@ -1,6 +1,23 @@
 import React from 'react';
 import TodoList from './components/TodoComponents/TodoList';
 import ToDoForm from './components/TodoComponents/TodoForm';
+
+const listData = [
+  
+    {
+      task: 'Clean Apartment',
+      id: 1,
+      completed: false
+    },
+    {
+      task: 'practice keyboard',
+      id: 2,
+      completed: false
+    }
+ 
+
+]
+
 class App extends React.Component {
   // you will need a place to store your state in this component.
   // design `App` to be the parent component of your application.
@@ -9,26 +26,44 @@ class App extends React.Component {
     super();
     this.state = {
       name: "John",
-      SavedText: [],
-      newData:[
-    ],
-      data: [
-        {
-          task: 'Clean Apartment',
-          id: 1,
-          completed: false
-        },
-        {
-          task: 'practice keyboard',
-          id: 2,
-          completed: false
-        }
-      ]
+      data: listData,
       
     };
   }
+AddToDo = (event) => {
+  this.setState({data})
+}
+toggleItem = id => {
+  console.log(id);
+  this.setState({
+    data: this.state.data.map(task=> {
+      if (task.id === id) {
+        return {
+          ...task,
+          completed: !task.completed
+        };
+      } else {
+        return task;
+      }
+    })
+  });
+};
+addTask = taskName => {
+  const newTask = {
+    name: taskName,
+    id: Date.now(),
+   completed: false
+  };
+  this.setState({
+    data: [...this.state.data, newTask]
+  });
+};
 
-
+finsihedTask = () => {
+  this.setState({
+    data: this.state.data.filter( => !item.purchased)
+  });
+};
   
   render() {
   
