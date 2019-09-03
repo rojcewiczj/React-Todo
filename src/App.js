@@ -1,7 +1,7 @@
 import React from 'react';
 import TodoList from './components/TodoComponents/TodoList';
 import ToDoForm from './components/TodoComponents/TodoForm';
-
+import './components/TodoComponents/Todo.css';
 const listData = [
   
     {
