@@ -5,12 +5,12 @@ import ToDoForm from './components/TodoComponents/TodoForm';
 const listData = [
   
     {
-      task: 'Clean Apartment',
+      name: 'Clean Apartment',
       id: 1,
       completed: false
     },
     {
-      task: 'practice keyboard',
+      name: 'practice keyboard',
       id: 2,
       completed: false
     }
