@@ -1,6 +1,12 @@
 import React from "react";
 
-const ToDo = props =>
-<h3>{props.task}</h3>;
-
+const ToDo = props => {
+return (
+    <div
+      className={`task${props.task.completed ? ' completed' : ''}`}
+      onClick={() => props.toggleItem(props.task.id)}
+    >
+<p>{props.task}</p>
+</div>
+)};
 export default ToDo;

@@ -9,8 +9,13 @@ const TodoList = props => {
 {props.data.map(element => {
     return (
      <ToDo task = {element.task} id={element.id} completed ={element.completed} /> 
+     
     )
   })}
+   <button className="finished-btn" onClick={props.completedTask}>
+      Completed-Task
+   </button>
   </div>
-)}
+);
+}
 export default TodoList; 

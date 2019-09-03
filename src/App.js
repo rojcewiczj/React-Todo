@@ -33,7 +33,7 @@ class App extends React.Component {
 AddToDo = (event) => {
   this.setState({data})
 }
-toggleItem = id => {
+toggleTask= id => {
   console.log(id);
   this.setState({
     data: this.state.data.map(task=> {
@@ -59,23 +59,28 @@ addTask = taskName => {
   });
 };
 
-finsihedTask = () => {
+completedTask = () => {
   this.setState({
-    data: this.state.data.filter( => !item.purchased)
+    data: this.state.data.filter(task => !task.completed)
   });
 };
   
   render() {
   
     return (
-      <div>
-         <h1> Hello {this.state.name}</h1>
-        <h2>Welcome to your Todo App!</h2>
-       <TodoList data = {this.state.data} />
-        <ToDoForm />
+      <div className="App">
+        <div className="header">
+          <h1> Hello {this.state.name}</h1> 
+          <h2>Welcome to your Todo App!</h2>
+           <ToDoForm addTask = {this.addTask} />
+        </div>
          
-        
-    
+       <TodoList 
+       data = {this.state.data}
+        toggleItem = {this.toggleTask} 
+        completedTask = {this.completedTask}/>
+       
+         
       </div>
     );
   }
