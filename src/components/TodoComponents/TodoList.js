@@ -8,7 +8,7 @@ const TodoList = props => {
     <div>
 {props.data.map(element => {
     return (
-      <ToDo task = {element.task} id={element.id} completed ={element.completed} />
+     <ToDo task = {element.task} id={element.id} completed ={element.completed} /> 
     )
   })}
   </div>

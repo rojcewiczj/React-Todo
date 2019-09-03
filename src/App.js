@@ -9,6 +9,9 @@ class App extends React.Component {
     super();
     this.state = {
       name: "John",
+      SavedText: [],
+      newData:[
+    ],
       data: [
         {
           task: 'Clean Apartment',
@@ -25,14 +28,17 @@ class App extends React.Component {
     };
   }
 
+
+  
   render() {
   
     return (
       <div>
          <h1> Hello {this.state.name}</h1>
         <h2>Welcome to your Todo App!</h2>
-        <TodoList data = {this.state.data} />
+       <TodoList data = {this.state.data} />
         <ToDoForm />
+         
         
     
       </div>
