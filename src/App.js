@@ -30,9 +30,7 @@ class App extends React.Component {
       
     };
   }
-AddToDo = (event) => {
-  this.setState({data})
-}
+
 toggleTask= id => {
   console.log(id);
   this.setState({
@@ -77,7 +75,7 @@ completedTask = () => {
          
        <TodoList 
        data = {this.state.data}
-        toggleItem = {this.toggleTask} 
+        toggleTask = {this.toggleTask} 
         completedTask = {this.completedTask}/>
        
          
